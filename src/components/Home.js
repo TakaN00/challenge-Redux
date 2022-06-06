@@ -9,10 +9,10 @@ const Home = () => {
     }
   return (
     <div className='container homeContainer'>
-        <img src='images/cover 01.png' alt='cover image'/>
+        <img src='images/cover 01.png' alt='cover'/>
         <button onClick={handleRoute}>Shop now</button>
         <h4>Born a legend and still living like it</h4>
-        <img src='images/cover 02.png' alt='cover image 02'/>
+        <img src='images/cover 02.png' alt='cover 02'/>
     </div>
   )
 }

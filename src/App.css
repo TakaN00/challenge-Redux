@@ -119,3 +119,25 @@
   flex-direction: row;
   flex-wrap: wrap;
 }
+
+.addButton button {
+  position: fixed;
+  z-index : 1;
+  top: 9em;
+  right: 6em;
+  background-color: var(--font01);
+  font-size: larger;
+}
+
+.backButton button{
+  position: fixed;
+  z-index : 1;
+  top: 9em;
+  right: 6em;
+  background-color: var(--font01);
+  border-style: none;
+  color: white;
+  font-size: larger;
+  padding: 0.3em;
+  border-radius: 4px;
+}

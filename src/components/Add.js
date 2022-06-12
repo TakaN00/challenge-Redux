@@ -1,11 +1,15 @@
 import React from "react";
 import { useState } from "react";
 import { Button, Modal, Form } from "react-bootstrap";
+import {useDispatch} from 'react-redux'
+import {addProduct} from '../slices/productSlice'
 
 function Add(props) {
+  const dispatch = useDispatch()
+
   const [show, setShow] = useState(false);
   const [product, setProduct] = useState(
-    {id : "TEST-T",
+    {id : (Math.random() + 1).toString(36).substring(7),
     fam : "Product Family",
     subfam : "Product Sub-Family",
     price : "40",
@@ -21,9 +25,9 @@ function Add(props) {
   const handleChange = (e) => setProduct({...product,[e.target.name]:e.target.value})
 
   const listChanged = () =>{
-    props.getAdd(product)
+    dispatch(addProduct(product))
     setProduct(
-        {id : "TEST-T",
+        {id : (Math.random() + 1).toString(36).substring(7),
         fam : "Product Family",
         subfam : "Product Sub-Family",
         price : "40",

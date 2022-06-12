@@ -1,7 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Edit from "./Edit";
+import {useDispatch} from 'react-redux'
+import {removeProduct} from '../slices/productSlice'
 
 const ProductCard = (props) => {
+  const dispatch = useDispatch()
+  const handleRemove = () => {
+    dispatch(removeProduct(props.id))
+  }
   return (
     <div className="product">
       <Link to={props.id}  style={{ textDecoration: 'none' }}>
@@ -14,6 +21,14 @@ const ProductCard = (props) => {
           </div>
         </div>
       </Link>
+      <div className="editBtn">
+        <Edit id={props.id} fam={props.fam} subfam={props.subfam} description={props.description} color={props.color} poster={props.poster} price={props.price}/>
+      </div>
+      <div className="removeBtn">
+        <button onClick={handleRemove}>
+          X
+        </button>
+      </div>
     </div>
   );
 };

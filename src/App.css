@@ -114,6 +114,32 @@
   opacity: 0.9;
 }
 
+.editBtn {
+  position :absolute;
+  z-index: 1;
+  /* transform:translate(24em, -31em); */
+  transform:translate(1em, -34em);
+}
+
+.removeBtn {
+  position :absolute;
+  z-index: 1;
+  transform:translate(26em, -33.8em)
+}
+
+.removeBtn button {
+  border-style: none;
+  color: white;
+  border-radius: 50%;
+  background-color: var(--bg02);
+  opacity:0.4;
+  transition: all 0.4s ease-in-out;
+}
+
+.removeBtn button:hover {
+  opacity: 0.9;
+}
+
 .listContainer {
   display: flex;
   flex-direction: row;

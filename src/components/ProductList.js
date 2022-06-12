@@ -1,28 +1,19 @@
 import React from 'react'
 import ProductCard from './ProductCard'
-import { useState, useEffect } from 'react'
 import Add from './Add'
+import {useSelector} from 'react-redux'
 
 const ProductList = (props) => {
   
-  const [items, setItems] = useState(props.list)
-
-  const getAdd=(newProduct)=>{
-    setItems([...items,newProduct])
-  } 
-
-  useEffect(()=>{
-    props.getList(items)
-  })
-
+  const list = useSelector(state=>state.productReducer.productList)
 
   return (
     <div>
       <div className='container listContainer'>
-        {items.map((el) => <ProductCard key={el.id} id={el.id} fam={el.fam} subfam={el.subfam} poster={el.poster} price={el.price}/>)}
+        {list.map((el) => <ProductCard key={el.id} id={el.id} fam={el.fam} subfam={el.subfam} description={el.description} color={el.color} poster={el.poster} price={el.price}/>)}
       </div>
       <div className='addButton'>
-        <Add getAdd={getAdd}/>
+        <Add/>
       </div>
     </div>
   )
